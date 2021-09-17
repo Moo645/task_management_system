@@ -1,0 +1,24 @@
+<h1> you are in task#show </h1>
+
+<div class="container">
+
+    <%= link_to '回到列表', root_path, class: 'btn btn-info' %>
+    
+    <figure class="text-center">
+        <blockquote class="blockquote">
+            <h2> <%= @task.title %> </h2>
+        </blockquote>
+<hr>
+    <figure class="text-center">
+        <blockquote class="blockquote">
+            <p> <%= @task.content %> </p>
+        </blockquote>
+<hr>
+
+<%= link_to '編輯任務', edit_task_path(params[:id]), class: 'btn btn-success' %>
+<%= link_to '刪除任務', task_path(params[:id]), method: :delete, class: 'btn btn-danger' %>
+
+
+
+</div>
+

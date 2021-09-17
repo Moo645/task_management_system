@@ -1,0 +1,47 @@
+<h1>you are in task#index</h1>
+
+<div class="container">
+
+    <div class="card text-center">
+
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="true" href="#">Index</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Yeild</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled">Yeild</a>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="card-body">
+
+            <% @tasks.each do |f| %>
+
+                <div class="card w-100 m-2">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= f.title  %></h5>
+                        <p class="card-text"><%= f.content %></p>
+                        <%= link_to '查看任務', task_path(f), class: 'btn btn-success' %>
+                        <%= link_to '編輯任務', edit_task_path(f), class: 'btn btn-primary' %>
+                </div>
+            </div>
+            <hr>
+
+            <% end %>
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+</div>

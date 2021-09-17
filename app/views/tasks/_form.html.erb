@@ -1,0 +1,26 @@
+
+<div class="container">
+
+  <%= link_to '回到列表', root_path, class: 'btn btn-info' %>
+
+  <%= form_for(@task) do |f| %>
+      <%= f.label :title, "任務標題" , class: 'form-label' %>
+      <%= f.text_field :title, class: 'form-control' %>
+
+      <%= f.label :content, "任務內容" , class: 'form-label' %>
+      <%= f.text_area :content, rows: 10, class: 'form-control' %>
+      
+      
+      <% if @task.id? %>
+        <%= f.submit "修改任務", class: 'btn btn-info'  %>
+        <%= link_to '刪除任務', task_path, method: :delete, class: 'btn btn-danger' %>
+
+
+      <% else %>
+        <%= f.submit "建立任務", class: 'btn btn-success' %>
+      <% end %>
+
+  <%end%>
+
+</div>
+
